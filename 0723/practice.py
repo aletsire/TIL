@@ -1,41 +1,63 @@
 #1 세로로 출력하기
-# number = 10
-# for i in range(1,number+1):
-#     print(i)
+# def list_sum(n):
+#     total=0
+#     for number in n:
+#         total += number
+#     return total
+
+# print(list_sum([1, 2, 3, 4]))
 
 #2
-# number = 5
-# for num in range(number,-1,-1):
-#     print(num)
+# def dict_list_sum(list):
+#     answer = 0
+#     for info in list:
+#         answer += info['age']
+#     return answer
 
-# 3
-# number = 10
-# total = 0
-# for num in range(number+1):
-#     total += num
-# print(total)
-
-#02
-#1
-# number = 10
-# for num in range(1,number+1):
-#     if number % num == 0:
-#         print(num, end = ' ')
-
-#2
-# numbers = [
-#     85, 72, 38, 80, 69, 65, 68, 96, 22, 49, 67,
-#     51, 61, 63, 87, 66, 24, 80, 83, 71, 60, 64,
-#     52, 90, 60, 49, 31, 23, 99, 94, 11, 25, 24
-# ]
-# numbers_sort = sorted(numbers)
-# print(numbers_sort[int((len(numbers_sort)-1)/2)])
+# print(dict_list_sum([{'name': 'kim', 'age': 12}, {'name': 'lee', 'age': 4}]))
 
 #3
-number = 4
-for i in range(1,number+1):
-    for j in range(1, i+1):
-        print(j, end =' ')
-    print()
+# def all_list_sum(list):
+#     answer = 0
+#     for number_list in list:
+#         for number in number_list:
+#             answer += number
+#     return answer
+
+
+# print(all_list_sum([[1], [2, 3], [4, 5, 6], [7, 8, 9, 10]]))
+
+#4
+# def get_asc_word(list):
+#     answer = ''
+#     for number in list:
+#         answer += chr(number)
+#     return f'\'{answer}\''
+    
+# print(get_secret_word([65, 108, 101, 120]))
+
+#5
+# def get_asc_number(word):
+#     answer = 0
+#     for char in word:
+#         answer += ord(char)
+#     return answer
+
+# print(get_secret_number('Alex'))
+
+#6
+def get_best_name(a, b):
+    val1 = 0
+    val2 = 0 
+    for chr1 in a:
+        val1 += ord(chr1)
+    for chr2 in b:
+        val2 += ord(chr2)
+    if val1 > val2:
+        return a
+    else:
+        return b
+
+print(get_best_name('michael', 'alex'))
 
 
