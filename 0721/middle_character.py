@@ -10,5 +10,5 @@ def get_middle_char(n):
         return n[int((len(n)-1)//2)]
 
 
-print(get_middle_char('ssafy'))
+print(get_middle_char('apple'))
 print(get_middle_char('coding'))
