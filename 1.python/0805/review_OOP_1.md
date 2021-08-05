@@ -94,14 +94,14 @@ class ClassHelper:
         pairs = []
         pair_count = len(self.students) // 2
         
-        for idx in range(pair_count):
+        for idx in range(pair_count):         
+            pair = self.students[idx*2:idx*2+2]
             if idx == pair_count - 1:
                 pair = self.students[idx*2:]
                 pairs.append(pair)
-                return pairs
-            
-            pair = self.students[idx*2:idx*2+2]
-            pairs.append(pair)
+            else:
+                pairs.append(pair)
+        return pairs
 ```
 
 
