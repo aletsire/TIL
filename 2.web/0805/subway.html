@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <header>
+    <h1>FORM</h1>
+  </header>
+    <div style="font-size: small;">
+      <form>
+        이름 : <input type="text" placeholder="이름을 입력해주세요"><br>
+        날짜 : <input type="date"><br>
+      </form>
+    </div>
+    <br>
+    <br>
+
+    <p style="font-weight: bolder;font-size: large;">1. 샌드위치 선택</p><br>
+      <input type="radio" name="sandwich">에그마요<br>
+      <input type="radio" name="sandwich">이탈리안 비엠티<br>
+      <input type="radio" name="sandwich">에그마요<br>
+    <hr>
+
+    <p style="font-weight: bolder;font-size: large;">2. 사이즈 선택</p><br>
+      <input type="number" min="15" max="30" step="15"><br>
+    <hr>
+
+    <p style="font-weight: bolder;font-size: large;">3. 빵</p><br>
+      <select name="bread">
+        <option value="1">허니오트</option>
+        <option value="2">파마산</option>
+        <option value="3">빵</option>
+      </select>
+    <br>
+
+    <p style="font-weight: bolder;font-size: large;">4. 야채/소스</p>
+      <input type="checkbox" name="source" value="1">토마토<br>
+      <input type="checkbox" name="source" value="2">오이<br>
+      <input type="checkbox" name="source" value="3">할라피뇨<br>
+      <input type="checkbox" name="source" value="4">핫 칠리<br>
+      <input type="checkbox" name="source" value="5">바베큐<br>
+      <input type="submit" value="제출">
+</body>
+</html>
