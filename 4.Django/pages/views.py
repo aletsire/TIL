@@ -1,8 +1,10 @@
 from django.shortcuts import render
 
 # Create your views here.
-def index(request):
-    return render(request, 'pages/index.html')
 
-def drink(request):
-    return render(request, 'pages/drink.html')
+def dinner(request,menu,count):
+    context = {
+        'menu': menu,
+        'count':count,
+    }
+    return render(request, 'dinner.html',context)

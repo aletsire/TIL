@@ -67,7 +67,7 @@ def catch(request):
     context = {
         'message': message
     }
-    return render(request, 'articles/catch.html', context)
+    return render(request, 'catch.html', context)
 
 def hello(request, name):
     context = {

@@ -53,13 +53,14 @@
     {% now "SHORT_DATE_FORMAT" %} <br>
     <hr>
 
-    {% now "Y-m-d D H:i" %}
+    {% now "Y년 m월 d일 (D) A H:i" %}
     <hr>
     {% now "Y" as current_year %}
     COPYRIGHT.{{current_year}}
     <hr>
     {{datetimenow|date:"SHORT_DATE_FORMAT"}}
     <hr>
+    
 
     <h3>5. template filter</h3>
     {% for message in messages %}
