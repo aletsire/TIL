@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>1. 반복문</h3>
+    {% for menu in menus %}
+        <p>{{menu}}</p>
+    {% endfor %}
+    <hr>
+
+    {% for menu in menus %}
+        <p>{{forloop.counter}}번째 과일 {{menu}}</p>
+    {% endfor %}
+    <hr>
+
+    {% for user in empty_list %}
+        <p>{{ user }}</p>
+    {% empty %}
+        <p>현재 가입된 유저가 없습니다.</p>
+    {% endfor %}
+
+    {% if '짜장면' in menus %}
+        <p>짜장면에는 고춧가루지</p>
+    {% endif %}
+    <hr>
+
+    {% for menu in menus %}
+        {{forloop.counter}}번째 도는중
+        {% if forloop.first %}
+            <p>첫번쨰 음식</p>
+            <p>{{menu}}</p>
+        {% else %}
+            <p>{{menu}}</p>
+        {% endif %}
+    {% endfor %}
+    <hr>
+    <h3>3. lorem impsum</h3>
+    {% lorem 1 w random %}
+    {% lorem 1 p %}
+    {% lorem 3 p random %}
+    <hr>
+
+    <h4>4. 날짜표현</h4>
+    {{datetimenow}} <br>
+    {% now "DATETIME_FORMAT" %} <br>
+    {% now "SHORT_DATETIME_FORMAT" %} <br>
+    {% now "DATE_FORMAT" %} <br>
+    {% now "SHORT_DATE_FORMAT" %} <br>
+    <hr>
+
+    {% now "Y-m-d D H:i" %}
+    <hr>
+    {% now "Y" as current_year %}
+    COPYRIGHT.{{current_year}}
+    <hr>
+    {{datetimenow|date:"SHORT_DATE_FORMAT"}}
+    <hr>
+
+    <h3>5. template filter</h3>
+    {% for message in messages %}
+        {% if message|length > 5 %}
+            <p>{{message}}는 너무 깅러요</p>
+        {% else %}
+            <p>{{message}}는 {{message|length}}글자</p>
+        {% endif %}
+    {% endfor %}
+
+    <h3>6. 문자열(글자수 제한-truncate) template filter</h3>
+    <p>{{ my_sentence|truncatewords:3}}</p>
+    <p>{{ my_sentence|truncatechars:3}}</p>
+    <p>{{ my_sentence|truncatechars:10}}</p>
+
+    <h3>7. 글자관련 필터</h3>
+    <p>{{ 'abc'|length }}</p>
+    <p>{{ 'ABC'|lower }}</p>
+    <p>{{ my_snetence|title }}</p>
+    <p>{{menus|random}}</p>
+{% comment %} ctrl + / 는 주석 {% endcomment %}
+
+</body>
+</html>
