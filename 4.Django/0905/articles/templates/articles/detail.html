@@ -8,5 +8,10 @@
 <h3>제목: {{article.title}}</h3>
 <br>
 <h5>내용: {{article.content}}</h5>
+<a href="{%url 'articles:edit' article.pk %}" class="btn btn-primary">수정</a>
 
+<form action="{% url 'articles:delete' article.pk %}" method="POST">
+{% csrf_token %}
+<button class="btn btn-danger">delete</button>
+</form>
 {% endblock content %}
