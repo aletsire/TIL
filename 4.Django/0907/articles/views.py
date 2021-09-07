@@ -1,5 +1,7 @@
-from .models import Article
+
+from django.views.decorators.http import require_http_methods
 from django.shortcuts import render, redirect
+from .models import Article
 from .forms import ArticleForm
 # Create your views here.
 
@@ -10,6 +12,7 @@ def index(request):
     }
     return render(request, 'articles/index.html', context)
 
+@require_http_methods(['GET', 'POST'])
 def create(request):
     # 5. create경로로 요청이 들어옴(POST) [case1. 잘못된 입력]
     # 10. create 경로로 요청이 들어옴(POST) [case2. 올바른 입력]
