@@ -33,6 +33,8 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'articles',
     'imagekit',
+    'django_cleanup',
+    # 'django_cleanup.apps.CleanupConfig', # django_cleanup이랑 같음
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -139,5 +141,7 @@ MEDIA_ROOT = BASE_DIR/ 'media'
 MEDIA_URL = '/media/'
 #django는 성능을 위해서 이미지를 경로만 저장 DB X
 
+
+MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

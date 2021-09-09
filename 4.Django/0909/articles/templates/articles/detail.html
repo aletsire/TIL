@@ -6,10 +6,10 @@
     <h3>글 번호: {{article.pk}}</h3>
     <h3>글 제목: {{article.title}}</h3>
     <p>글 내영: {{article.content}}</p>
-    {% if article.image_thumb %}
-    <img src="{{article.image_thumb.url}}" alt="article.image_thumb">
+    {% if article.image %}
+    <img src="{{article.image.url}}" alt="article.image">
     <hr>
-    {{article.image_thumb.url}}
+    <img src="{{article.image_thumbnail.url}}" alt="article.image_thumbnail">
     <hr>
     {% endif %}
     <p>글 생성시간: {{article.created_at|date:"SHORT_DATE_FORMAT"}}</p>
