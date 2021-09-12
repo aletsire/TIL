@@ -2,18 +2,21 @@
 {% load static %}
 
 {% block css %}
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
 {% endblock css %}
 
 {% block content %}
-<h1>Articles Home</h1>
+
+<img src="{% static 'articles/cat.png' %}" alt="">
+<h1 class="text-warning">Articles</h1>
+<a href="{% url 'articles:create' %}">[CREATE]</a>
 <hr>
-<a href="{% url 'articles:create' %}">[NEW]</a>
-<br><br>
 {% for article in articles %}
-    <h2>{{article.title}}</h2>
-    <a href="{% url 'articles:detail' article.pk %}">상세보기</a>
+    <h3>글 번호: {{article.id}}</h3>
+    <h3>글 제목: {{article.title}}</h3>
+    <h3>글 내용: {{article.content}}</h3>
+    <a href="{% url 'articles:detail' article.pk %}">[DETAIL]</a>
     <hr>
 {% endfor %}
-<img src="{% static 'articles/cat.png' %}" alt="">
+
 {% endblock content %}

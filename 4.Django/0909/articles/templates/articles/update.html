@@ -1,11 +1,16 @@
 {% extends 'base.html' %}
+{% load static %}
+{% load bootstrap5 %}
 
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+{% endblock css %}
 
 {% block content %}
     <h2>update</h2>
     <form action="{%url 'articles:update' article.pk %}" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
-    {{form.as_p}}
+    {%bootstrap_form form%}
     <input type="submit" value="수정">    
     </form>
     <hr>

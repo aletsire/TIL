@@ -28,8 +28,6 @@ def create(request):
 
 
             return redirect('articles:index')
-
-    
     else: 
         form = ArticleForm()
     context = { 

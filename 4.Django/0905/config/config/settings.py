@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-*04orm+j5mlr+9_ia_0sryta=ut=i&r81-18skp_c^thjv29ut'
+SECRET_KEY = 'django-insecure-1x&_t@agl*y-s^p@2kvp(_wcb82-1fc8k37a2$0-+-djzqtc@7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -31,11 +31,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'articles',
-    'imagekit',
-    'django_cleanup',
-    'bootstrap5',
-    # 'django_cleanup.apps.CleanupConfig', # django_cleanup이랑 같음
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -59,7 +54,7 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR/'templates'],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -108,9 +103,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'ko-kr'
+LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'Asia/Seoul'
+TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
@@ -126,23 +121,5 @@ STATIC_URL = '/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
-
-STATICFILES_DIRS = [BASE_DIR/'static',]
-
-# 미디어파일(사용자가 업로드한 이미지 파일) 사용 방법
-# 1. settings.py에 MEDIA_ROOT, MEDIA_URL 설정
-# 2. 프로젝트 폴더의 urls.py에서 경로 설정
-# 3. upload_to 속성을 정의하여 업로드 된 파일에 사용할 MEDIA_ROOT의 하위 경로 지정(upload_to는 optional이기 때문)
-# 4. 업로드 된 파일의 상대 URL은 django가 제공하는 url속성을 이용해서 사용(article.image.url)
-
-
-MEDIA_ROOT = BASE_DIR/ 'media'
-# media파일을 저장할 폴더
-
-MEDIA_URL = '/media/'
-#django는 성능을 위해서 이미지를 경로만 저장 DB X
-
-
-MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

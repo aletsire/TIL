@@ -1,11 +1,19 @@
 {% extends 'base.html' %}
+{% load static %}
+{% comment %} {% load bootstrap5 %} {% endcomment %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+{% endblock css %}
 
 {% block content %}
-    <h2>Create Article</h2>
-    <form action="{% url 'articles:create' %}" method="POST" enctype="multipart/form-data">
+    <h1 class="" style="color:orange">CREATE</h1>
+    <form action="{% url 'articles:create' %}" method="POST" enctype="multipart/form-data" class="form-label">
     {% csrf_token %}
     {{form.as_p}}
-    <input type="submit" value="작성">
+    
+    {% comment %} {%bootstrap_form form%} {% endcomment %}
+    <input type="submit" value="제출">
     </form>
-
+    <a href="{% url 'articles:index' %}">[back]</a>
 {% endblock content %}
