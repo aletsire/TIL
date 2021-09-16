@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load bootstrap5 %}
+
+{% block content %}
+<h1>LOGIN</h1>
+{% comment "" %} action이 비어있어야 next파라미터가 동작함{% endcomment %}
+<form action="" method="POST">
+{% csrf_token %}
+{% bootstrap_form form %}
+{% buttons submit="LOGIN" reset="Cancel" %}{% endbuttons %}
+
+</form>
+
+{% endblock content %}
