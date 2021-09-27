@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% load bootstrap5 %}
+{% block content %}
+<h1>Create</h1>
+<hr>
+<form action="{% url 'movies:create' %}" method="POST" enctype="multipart/form-data">
+{% csrf_token %}
+
+{% bootstrap_form form %}
+<button class="btn btn-primary">작성</button>
+</form>
+<a class="btn btn-secondary" href="{% url 'movies:index' %}">BACK</a>
+{% endblock content %}

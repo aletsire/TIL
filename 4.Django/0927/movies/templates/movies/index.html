@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<h1>HOME</h1>
+<hr>
+<br>
+{% for movie in movies %}
+    <h3><a href="{% url 'movies:detail' movie.pk%}" class="text-decoration-none text-danger fw-bold">{{movie.title}}</a></h3>
+    <h5>{{movie.overview}}</h5>
+    {% if movie.poster %}
+        <img src="{{movie.poster.url}}" alt="movie.poster">
+    <br>
+    {% endif %}
+    <br>
+    <hr>
+{% endfor %}
+
+
+{% endblock content %}

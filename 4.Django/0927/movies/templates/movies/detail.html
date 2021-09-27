@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Detail</h1>
+<hr>
+<h3>제목: {{movie.title}}</h3>
+<h3>내용: {{movie.overview}}</h3>
+{% if movie.poster %}
+  <img src="{{movie.poster.url}}" alt="movie.poster">
+{% endif %}
+<p>Poster_path: {{movie.poster_path}}</p>
+<p>작성 시각: {{movie.created_at}}</p>
+<p>수정 시각: {{movie.updated_at}}</p>
+<a href="{% url 'movies:update' movie.pk %}" class="btn btn-primary">수정</a>
+<form action="{% url 'movies:delete' movie.pk %}" method="POST">
+  {% csrf_token %}
+  <button class="btn btn-danger">삭제</button>
+</form>
+<br>
+<a class="btn btn-secondary" href="{% url 'movies:index' %}">BACK</a>
+<hr>
+{% endblock content %}
