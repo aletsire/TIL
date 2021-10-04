@@ -491,3 +491,84 @@ DELETE FROM users_user WHERE id=100;
     SELECT COUNT(*) FROM users_user where age=30 OR last_name='김';
     ```
 
+- 조건조회(지역번호가 02인 사람의 인원 수)
+
+  - ORM
+
+    ```python
+    User.objects.filter(phone__startwith='02').count()
+    ```
+
+  - SQL
+
+    ```sqlite
+    SELECT COUNT(*) FROM users_user where phone like '02%';
+    ```
+
+- 조건조회(나이가 많은 사람 순으로 10명)
+
+  - ORM
+
+    ```python
+    User.objects.order_by('-age')[:10]
+    ```
+
+  - SQL
+
+    ```sqlite
+    SELECT * FROM users_user order by age desc limit 10;
+    ```
+
+- 조건조회(잔액이 적고 나이가 많은 순으로 10명)
+
+  - ORM
+
+    ```python
+    User.objects.order_by('balance', '-age')[:10]
+    ```
+
+  - SQL
+
+    ```sqlite
+    SELECT * FROM users_user order by balance, age desc limit 10;
+    ```
+
+
+
+
+
+## Django Aggregation
+
+- 특정 필드 전체의 합, 평균, 개수 등을 계산할 때 사용
+
+- 전체 유저의 평균 나이
+
+  - ORM
+
+    ```python
+    User.objects.aggregate(Avg('age'))
+    ```
+
+  - SQL
+
+    ```sqlite
+    SELECT AVG(age) FROM users_user;
+    ```
+
+- 성이 김씨인 유저들의 평균 나이
+
+  - ORM
+
+    ```python
+    User.objects.filter(last_name='김').aggregate(Avg('age'))
+    ```
+
+  - SQL
+
+    ```sqlite
+    SELECT AVG(age) FROM users_user where last_name='김';
+    ```
+
+- Annotate
+  - 필드를 하나 만들고 거기에 내용을 채워 넣는 개념
+
