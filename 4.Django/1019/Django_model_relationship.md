@@ -37,7 +37,7 @@ def signup(request):
 {% endblock content %}
 ```
 
-![image-20211019103901744](1019_workshop.assets/image-20211019103901744.png)															
+![image-20211019103901744](Django_model_relationship.assets/image-20211019103901744.png)															
 
 
 
@@ -79,7 +79,7 @@ def login(request):
 {% endblock content %}
 ```
 
-![image-20211019104110368](1019_workshop.assets/image-20211019104110368.png)
+![image-20211019104110368](Django_model_relationship.assets/image-20211019104110368.png)
 
 ​																							
 
@@ -121,7 +121,7 @@ def index(request):
 {% endblock content %}
 ```
 
-![image-20211019104352225](1019_workshop.assets/image-20211019104352225.png)
+![image-20211019104352225](Django_model_relationship.assets/image-20211019104352225.png)
 
 ### 4. Todo 생성
 
@@ -159,4 +159,4 @@ def new(request):
 {% endblock content %}
 ```
 
-![image-20211019104613367](1019_workshop.assets/image-20211019104613367.png)
+![image-20211019104613367](Django_model_relationship.assets/image-20211019104613367.png)
