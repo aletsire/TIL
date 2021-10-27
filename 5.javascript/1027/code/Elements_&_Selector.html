@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .txt-blue {
+            color: blue;
+        }
+        .txt-red {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <ul class="list">
+        <li class="txt-blue">1번</li>
+        <li class="txt-blue">2번</li>
+        <li class="txt-blue">3번</li>
+        <li class="txt-blue">4번</li>
+        <li class="txt-blue">5번</li>
+        <li class="txt-blue">6번</li>
+    </ul>
+
+    <!-- 클래스가 바뀌면 명단에서 아예 없어지기 때문에 원했던 순서대로 진행이 안된다 
+        <script>
+        const $li = document.getElementsByClassName('txt-blue');
+        for (let i = 0; i < $li.length; i++) {
+            console.log($li[i])
+            $li[i].className = 'txt-read';
+        }
+    </script> -->
+    <script>
+        const $li = document.querySelectorAll('.txt-blue');
+        for (let i = 0; i < $li.length; i++) {
+            console.log($li[i])
+            $li[i].className = 'txt-red';
+        }
+    </script>
+</body>
+</html>
