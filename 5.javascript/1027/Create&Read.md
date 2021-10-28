@@ -1,7 +1,5 @@
 # JavaScript
 
-####  제시된 CREATE, READ 기능을 충족하는 todo app을 완성하시오.
-
 - form 태그를 사용한다. 
 - form에서 submit 이벤트가 발생되었을 때 input에 작성된 값이 todo로 추가된다.
 - todo는 ul 태그의 li 태그로 추가된다. 
@@ -47,6 +45,6 @@
 </script>
 ```
 
-![image-20211027170713531](1027_workshop.assets/image-20211027170713531.png)
+![image-20211027170713531](Create&Read.assets/image-20211027170713531.png)
 
-![image-20211027170727791](1027_workshop.assets/image-20211027170727791.png)
+![image-20211027170727791](Create&Read.assets/image-20211027170727791.png)
